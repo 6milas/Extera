@@ -25,6 +25,7 @@ jobs:
 
       - name: Create signing key
         run: |
+          rm -f TMessagesProj/config/release.keystore
           mkdir -p TMessagesProj/config
           keytool -genkeypair -v \
             -keystore TMessagesProj/config/release.keystore \
@@ -76,4 +77,3 @@ jobs:
         with:
           name: apk
           path: TMessagesProj_App/build/outputs/apk/afat/release/*.apk
-          
